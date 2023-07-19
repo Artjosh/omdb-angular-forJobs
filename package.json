@@ -9,8 +9,7 @@
     "test": "ng test --browsers ChromeHeadless ",
     "test:husky": "ng test --browsers ChromeHeadless --no-watch",
     "lint": "ng lint",
-    "format": "npx prettier — write .",
-    "prepare": "husky install"
+    "format": "npx prettier — write ."
   },
   "private": true,
   "dependencies": {
