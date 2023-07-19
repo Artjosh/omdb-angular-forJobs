@@ -1,0 +1,61 @@
+{
+  "app-name": "OMDB NTTDATA",
+  "img-alt": "photo of {{title}}",
+  "language": "Language",
+  "snackbar-close": "Close",
+  "paginator": {
+    "first-page": "First Page",
+    "last-page": "Last Page",
+    "next-page": "Next Page",
+    "previous-page": "Previous Page",
+    "range": "of"
+  },
+  "home-page": {
+    "favorites-button": "Favorites",
+    "search-form": {
+      "title": "Search",
+      "fields": {
+        "search": "Search",
+        "year": "Year",
+        "type": {
+          "title": "Type",
+          "options": {
+            "none": "None",
+            "movie": "Movie",
+            "series": "Series",
+            "episode": "Episode",
+            "game": "Game"
+          }
+        }
+      }
+    }
+    
+  },
+  "details-page": {
+    "rated": "Rated",
+    "released": "Released",
+    "runtime": "Runtime",
+    "genre": "Genre",
+    "director": "Director",
+    "writer": "Writer",
+    "actors": "Actors",
+    "plot": "Plot",
+    "language": "Language",
+    "country": "Country",
+    "awards": "Awards",
+    "poster": "Poster",
+    "metascore": "Metascore",
+    "imdbRating": "IMDb Rating",
+    "imdbVotes": "IMDb Votes",
+    "imdbId": "IMDb ID",
+    "dvd": "DVD",
+    "box-office": "Box Office",
+    "production": "Production",
+    "website": "Website",
+    "response": "Response",
+    "back-to-home": "Back to Home",
+    "recently-viewed": "Recently Viewed",
+    "add-to-favorites": "Add to Favorites",
+    "remove-from-favorites": "Remove from Favorites"
+  }
+}

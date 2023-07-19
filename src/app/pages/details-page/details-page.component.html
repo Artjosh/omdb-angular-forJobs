@@ -1,0 +1,116 @@
+<main class="w-100 h-100" *transloco="let t">
+  <app-card
+    *ngIf="movie$ | async as movie; else loading"
+    [title]="movie.Title + ' (' + movie.Year + ')'"
+    [subtitle]="movie.Type | capitalize">
+    <div content>
+      <div class="row">
+        <div class="col-lg-3 col-md-12">
+          <img
+            mat-card-image
+            appImageNonPoster
+            [placeholder]="movie.Type | capitalize"
+            [src]="movie.Poster"
+            [alt]="t('img-alt', { title: movie.Title })"
+            class="h-100 w-100" />
+        </div>
+        <div class="col-lg-9 col-md-12 row">
+          <div class="col-lg-6 col-md-12">
+            <app-info-label
+              [label]="t('details-page.director')"
+              [value]="movie.Director"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.writer')"
+              [value]="movie.Writer"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.rated')"
+              [value]="movie.Rated"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.actors')"
+              [value]="movie.Actors"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.awards')"
+              [value]="movie.Awards"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.released')"
+              [value]="movie.Released"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.runtime')"
+              [value]="movie.Runtime"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.country')"
+              [value]="movie.Country"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.language')"
+              [value]="movie.Language"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.awards')"
+              [value]="movie.Awards"></app-info-label>
+            <app-info-label label="DVD" [value]="movie.DVD"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.production')"
+              [value]="movie.Production"></app-info-label>
+            <app-info-label
+             [label]="t('details-page.plot')"
+             [value]="movie.Plot"></app-info-label>
+            <a [routerLink]="HOME_ROUTE">{{
+              t('details-page.back-to-home') | capitalize
+            }}</a>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <app-info-label
+              [label]="t('details-page.genre')"
+              [value]="movie.Genre"></app-info-label>
+            <app-info-label
+              *ngFor="let rating of movie.Ratings"
+              [label]="rating.Source"
+              [value]="rating.Source"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.metascore')"
+              [value]="movie.Metascore"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.imdbRating')"
+              [value]="movie.imdbRating"></app-info-label>
+              <ng-container *ngIf="movie?.imdbRating !== undefined">
+                <app-star-rating [rating]="movie.imdbRating"></app-star-rating>
+              </ng-container>
+            <app-info-label
+              [label]="t('details-page.imdbVotes')"
+              [value]="movie.imdbVotes"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.box-office')"
+              [value]="movie.BoxOffice"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.website')"
+              [value]="movie.Website"></app-info-label>
+              
+              <button [class]="'btn custom-button-success ' + (isFavorite(movie) ? 'custom-button-secondary' : '')" (click)="toggleFavorite(movie)">
+                <i class="fa red-heart" [class.fa-heart]="isFavorite(movie)" [class.fa-heart-o]="!isFavorite(movie)"></i>
+                <span [transloco]="isFavorite(movie) ? 'details-page.remove-from-favorites' : 'details-page.add-to-favorites'" class="favorite-button-text"></span>
+              </button>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-card>
+
+  <app-card
+    [title]="t('details-page.recently-viewed') | capitalize"
+    *ngIf="recentlyViewedMovies$ | async as recentlyViewedMovies">
+    <div class="row justify-content-center" content>
+      <div
+        class="col-lg-2 col-md-12"
+        *ngFor="let recently of recentlyViewedMovies">
+        <app-movie-card
+          [movie]="recently"
+          (click)="goToRecentlyViewMovie(recently.imdbID)"></app-movie-card>
+      </div>
+    </div>
+  </app-card>
+
+  <ng-template #loading>
+    <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</main>

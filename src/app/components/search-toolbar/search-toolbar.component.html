@@ -1,0 +1,46 @@
+<div class="container" *transloco="let t">
+  <app-card [title]="t('app-name') | titlecase">
+    <div [formGroup]="searchForm" (input)="onChange()" class="row" content>
+      <div class="col-md-12 col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>
+            {{ t('home-page.search-form.fields.search') | capitalize }}
+          </mat-label>
+          <input matInput formControlName="searchedText" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 col-lg-2">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>
+            {{ t('home-page.search-form.fields.year') | capitalize }}
+          </mat-label>
+          <input matInput type="number" min="0" formControlName="year" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 col-lg-2">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>
+            {{ t('home-page.search-form.fields.type.title') | capitalize }}
+          </mat-label>
+          <mat-select formControlName="type" (selectionChange)="onChange()">
+            <mat-option value="">{{
+              t('home-page.search-form.fields.type.options.none') | capitalize
+            }}</mat-option>
+            <mat-option *ngFor="let option of typeOptions" [value]="option.key">
+              {{ t(option.translationKey) | capitalize }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 col-lg-2">
+        <app-lang-select></app-lang-select>
+      </div>
+      <div class="col-12 text-center">
+        <button mat-button class="btn rounded-pill custom-button-success red-heart marginbottom" (click)="goToFavoritesPage()">
+          <i class="fa fa-heart heart-icon red-heart"></i>
+          {{ t('home-page.favorites-button') | capitalize }}
+        </button>
+      </div>
+    </div>
+  </app-card>
+</div>

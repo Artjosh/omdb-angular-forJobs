@@ -1,0 +1,39 @@
+// Defina suas variáveis de cores e bordas
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$border-radius: 20px;
+
+// Crie um mixin para estilizar os botões
+@mixin custom-button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  padding: 10px 20px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// Use o mixin para estilizar os botões
+.custom-button {
+  @include custom-button($primary-color, #fff);
+}
+
+.custom-button-secondary {
+  @include custom-button($secondary-color, #fff);
+}
+
+.custom-button-success {
+  @include custom-button($success-color, #fff);
+}
+
+.red-heart{
+  color: red
+}
+
+.favorite-button-text {
+  margin-left: 0.5em; /* Ajuste a margem conforme necessário */
+}

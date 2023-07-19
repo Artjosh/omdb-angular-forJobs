@@ -1,0 +1,64 @@
+{
+  "app-name": "Navegador de Dados do OMDB NTTDATA",
+  "img-alt": "foto de {{title}}",
+  "language": "idioma",
+  "snackbar-close": "fechar",
+  "paginator": {
+    "first-page": "primeira página",
+    "last-page": "última página",
+    "next-page": "próxima página",
+    "previous-page": "página anterior",
+    "range": "de"
+  },
+  "home-page": {
+    "favorites-button": "Favoritos",
+    "search-form": {
+      "title": "buscar",
+      "fields": {
+        "search": "buscar",
+        "year": "ano",
+        "type": {
+          "title": "tipo",
+          "options": {
+            "none": "nenhum",
+            "movie": "filme",
+            "series": "série",
+            "episode": "episódio",
+            "game": "jogo"
+          }
+        }
+      }
+    }
+  },
+  "details-page": {
+    "rated": "classificação",
+    "released": "lançamento",
+    "runtime": "duração",
+    "genre": "gênero",
+    "director": "diretor",
+    "writer": "roteirista",
+    "actors": "atores",
+    "plot": "enredo",
+    "language": "idioma",
+    "country": "país",
+    "awards": "prêmios",
+    "poster": "pôster",
+    "metascore": "metascore",
+    "imdbRating": "classificação IMDB",
+    "imdbVotes": "votos IMDB",
+    "imdbId": "ID IMDB",
+    "dvd": "DVD",
+    "box-office": "bilheteria",
+    "production": "produção",
+    "website": "website",
+    "response": "resposta",
+    "back-to-home": "voltar para página inicial",
+    "recently-viewed": "recentemente visualizado",
+    "add-to-favorites": "Adicionar aos favoritos",
+    "remove-from-favorites": "Remover dos favoritos"
+  },
+  "favorites-page": {
+    "title": "Favoritos",
+    "no-favorites": "Nenhum filme favorito encontrado"
+  }
+}
