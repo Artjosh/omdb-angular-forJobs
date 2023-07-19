@@ -1,5 +1,5 @@
 # OMDB EXAMPLE
-Remove algumas dependencias não usadas de ultima hora para o deploy ser feito com sucesso, caso encare algum erro procure arrumar suas necessidades em package.json
+Removi algumas dependencias não usadas de ultima hora para o deploy ser feito com sucesso, caso encare algum erro procure arrumar suas necessidades em package.json
 PS: I removed few unused dependecy for some reasons, so if you face crashes put your hands at work and go fix your package.json
 Project made to use as showcase of my skills with angular.
 
